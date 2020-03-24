@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'umbrellify'
+
+config_default_name = 'Umbrellifile'
+working_directory = Dir.pwd
+
+# Parse Umbrellifile in current directory
+config_path = "#{working_directory}/#{config_default_name}"
+abort "Could not find Umbrellifile in current directory!" unless File.exists? config_path
+configuration = Umbrellify::Configuration.new(config_path)
+
+# Find xcodeproj file
+project_path = configuration.project_path
+abort "Could not find Xcode project file!" unless File.exists? project_path
+
+# Find path for source code operations
+source_path = ARGV[0] || configuration.source_path || working_directory
+
+# Perform actions
+puts "Performing modifications to source code..."
+imports_manager = Umbrellify::ImportsManager.new(configuration)
+imports_manager.process_directory("#{source_path}/**/*.swift")
+
+puts "Performing modifications to Xcode project..."
+project_manager = Umbrellify::ProjectManager.new(project_path, configuration)
+project_manager.apply
+
+puts "Done successfully!"

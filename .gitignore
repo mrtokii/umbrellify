@@ -1,0 +1,5 @@
+## OS X temporary files
+.DS_Store
+
+## Build generated
+*.gem
