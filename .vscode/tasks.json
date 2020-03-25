@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build and install gem",
+            "type": "shell",
+            "command": "gem build umbrellify.gemspec && gem install `ls *.gem`",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+              }
+        }
+    ]
+}
