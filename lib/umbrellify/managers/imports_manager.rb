@@ -1,5 +1,5 @@
-require_relative "../Configuration/Configuration"
-require_relative "./SwiftSourceFile/SwiftSourceFile"
+require "umbrellify/configuration"
+require "umbrellify/models/swift_source_file"
 
 module Umbrellify
     class ImportsManager

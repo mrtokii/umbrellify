@@ -1,5 +1,5 @@
 module Umbrellify
-  require_relative "./Configuration/Configuration"
-  require_relative "./ImportsManager/ImportsManager"
-  require_relative "./ProjectManager/ProjectManager"
+  require "umbrellify/configuration"
+  require "umbrellify/managers/imports_manager"
+  require "umbrellify/managers/project_manager"
 end
