@@ -94,4 +94,4 @@ $ umbrellify
 
 ## LICENSE
 
-These works are available under the MIT license. See the [LICENSE](https://github.com/mrtokii/umbrellify/blob/master/LICENSE.md) file for more info.
+These works are available under the MIT license. See the [LICENSE](https://github.com/mrtokii/umbrellify/blob/master/LICENSE) file for more info.
